@@ -1,0 +1,75 @@
+# =====================================================================
+# Matriz de encaminhamento — Solicitações de Conservação Rodoviária
+# ---------------------------------------------------------------------
+# PREMISSA DO GRUPO: equipes, prazos e concessões abaixo são uma proposta
+# para o protótipo e devem ser validados com a Motiva.
+#
+# Os e-mails usam o domínio reservado example.com (não entrega para
+# ninguém). Para a demonstração, use ENVIO_REDIRECIONAR_PARA no .env ou
+# troque por aliases do Gmail do grupo (ex.: grupo+cco@gmail.com).
+# =====================================================================
+
+# Prazo (em horas) para o primeiro atendimento no local
+sla_horas:
+  CRITICA: 2
+  ALTA: 24
+  MEDIA: 72
+  BAIXA: 168
+
+# Concessão usada quando o local não é encontrado no cadastro de trechos
+regional_padrao: AUTOBAN
+
+equipes:
+  CCO:
+    nome: Centro de Controle Operacional (CCO)
+    email: cco@example.com
+  CONSERVACAO_AUTOBAN:
+    nome: Conservação de Rotina — Motiva Autoban
+    email: conservacao.autoban@example.com
+  CONSERVACAO_VIAOESTE:
+    nome: Conservação de Rotina — ViaOeste
+    email: conservacao.viaoeste@example.com
+  CONSERVACAO_RIOSP:
+    nome: Conservação de Rotina — RioSP
+    email: conservacao.riosp@example.com
+  CONSERVACAO_VIASUL:
+    nome: Conservação de Rotina — ViaSul
+    email: conservacao.viasul@example.com
+  SINALIZACAO_SEGURANCA:
+    nome: Sinalização e Dispositivos de Segurança
+    email: sinalizacao@example.com
+  MANUTENCAO_ELETRICA:
+    nome: Manutenção Elétrica e Iluminação
+    email: eletrica@example.com
+  ENGENHARIA_TALUDES:
+    nome: Engenharia — Drenagem e Taludes
+    email: engenharia.taludes@example.com
+  OUVIDORIA:
+    nome: Ouvidoria / Atendimento ao Usuário (fora do escopo)
+    email: ouvidoria@example.com
+  TRIAGEM_CONSERVACAO:
+    nome: Triagem de Conservação (análise humana)
+    email: triagem.conservacao@example.com
+
+# Categoria -> equipe responsável.
+# "{regional}" é substituído pela concessão do trecho (ex.: CONSERVACAO_VIAOESTE).
+categorias:
+  PAVIMENTO: "CONSERVACAO_{regional}"
+  VEGETACAO_LIMPEZA: "CONSERVACAO_{regional}"
+  DRENAGEM_TALUDES: "CONSERVACAO_{regional}"
+  SINALIZACAO: SINALIZACAO_SEGURANCA
+  DISPOSITIVOS_SEGURANCA: SINALIZACAO_SEGURANCA
+  ILUMINACAO: MANUTENCAO_ELETRICA
+  OCORRENCIA_TRAFEGO: CCO
+  FORA_ESCOPO: OUVIDORIA
+
+# Para onde vão as solicitações com baixa confiança da IA
+equipe_triagem: TRIAGEM_CONSERVACAO
+
+# Regras de cópia
+copias:
+  # Urgência crítica: o CCO acompanha (aciona sinalização, interdição, inspeção)
+  urgencia_critica: [CCO]
+  # Equipes copiadas por categoria (além da responsável)
+  por_categoria:
+    DRENAGEM_TALUDES: [ENGENHARIA_TALUDES]
