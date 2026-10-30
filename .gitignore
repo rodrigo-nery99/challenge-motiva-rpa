@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# dados gerados em execução
+dados/*.db
+saida/*
+!saida/.gitkeep
+entrada/*
+!entrada/.gitkeep
