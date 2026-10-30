@@ -1,0 +1,9 @@
+rodovia;nome_rodovia;apelidos;km_inicial;km_final;concessao;nome_concessao;base_conservacao;cidade_base;uf
+SP-330;Anhanguera;Via Anhanguera|Rodovia Anhanguera;11;158;AUTOBAN;Motiva Autoban;Base de Conservação Jundiaí;Jundiaí;SP
+SP-348;Bandeirantes;Rodovia dos Bandeirantes|Bandeirante;13;173;AUTOBAN;Motiva Autoban;Base de Conservação Itupeva;Itupeva;SP
+SP-280;Castello Branco;Castelo Branco|Castello|Castelinho|Rodovia Castello Branco;13;79;VIAOESTE;ViaOeste;Base de Conservação Barueri;Barueri;SP
+SP-270;Raposo Tavares;Raposo|Rodovia Raposo Tavares;34;115;VIAOESTE;ViaOeste;Base de Conservação Sorocaba;Sorocaba;SP
+BR-116;Presidente Dutra;Dutra|Via Dutra|Rodovia Presidente Dutra;0;231;RIOSP;RioSP;Base de Conservação São José dos Campos;São José dos Campos;SP
+BR-101;Rio-Santos;Rio Santos|Rodovia Rio-Santos;390;600;RIOSP;RioSP;Base de Conservação Angra dos Reis;Angra dos Reis;RJ
+BR-290;Freeway;Free Way|Free-way|Rodovia Osvaldo Aranha;0;112;VIASUL;ViaSul;Base de Conservação Gravataí;Gravataí;RS
+BR-386;Rodovia da Produção;Tabaí-Canoas|Rodovia da Producao;350;445;VIASUL;ViaSul;Base de Conservação Montenegro;Montenegro;RS
